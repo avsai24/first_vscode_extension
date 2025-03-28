@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🚀 CaptenAI Show – VS Code Extension
 
 **CaptenAI Show** is a lightweight developer tool that lets you:
