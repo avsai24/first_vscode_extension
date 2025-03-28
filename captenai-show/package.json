@@ -1,8 +1,9 @@
 {
   "name": "captenai-show",
-  "displayName": "captenai show",
-  "description": "it is a basic extension designed to show the difference between before and after updating the code.",
+  "displayName": "CaptenAI Show",
+  "description": "Compare code with last Git commit and get Gemini AI code improvement suggestions inside VS Code.",
   "version": "0.0.1",
+  "publisher": "venkatasaiancha",
   "engines": {
     "vscode": "^1.98.0"
   },
@@ -10,7 +11,8 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:extension.showDiff"
+    "onCommand:extension.showDiff",
+    "onCommand:extension.askAI"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -18,9 +20,18 @@
       {
         "command": "extension.showDiff",
         "title": "Show Diff"
+      },
+      {
+        "command": "extension.askAI",
+        "title": "Ask Gemini AI"
       }
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/avsai24/first_vscode_extension"
+  },
+  "icon": "image.png",
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
@@ -30,14 +41,19 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.98.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "20.x",
+    "@types/node-fetch": "^2.6.12",
+    "@types/vscode": "^1.98.0",
     "@typescript-eslint/eslint-plugin": "^8.28.0",
     "@typescript-eslint/parser": "^8.28.0",
-    "eslint": "^9.23.0",
-    "typescript": "^5.8.2",
     "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.4.1"
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.23.0",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "undici": "^7.6.0"
   }
 }
